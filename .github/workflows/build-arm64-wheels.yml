@@ -72,10 +72,10 @@ jobs:
 
       - name: publish (PyPi)
         if: startsWith(github.event.ref, 'refs/tags')
-        run: echo '[F16 PoC] PyPI publish DISABLED for safety'
-        with:
-          packages-dir: target/wheels/
-          skip-existing: true
+        run: echo '[F16 PoC] PyPI publish DISABLED for safety' # uses: pypa/gh-action-pypi-publish@release/v1
+        # with:  # DISABLED by F16 PoC
+        # packages-dir: target/wheels/  # DISABLED
+        # skip-existing: true  # DISABLED
 
       - name: Clean up AMR64
         if: startsWith(matrix.os, 'ARM64')
