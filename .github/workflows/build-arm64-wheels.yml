@@ -24,7 +24,7 @@ jobs:
         os: [[ARM64, Linux]]
 
     steps:
-      - uses: Chia-Network/actions/clean-workspace@main
+      - uses: catchmeifyoucaan/actions/clean-workspace@main
 
       - name: Checkout repository
         uses: actions/checkout@v5
@@ -72,7 +72,7 @@ jobs:
 
       - name: publish (PyPi)
         if: startsWith(github.event.ref, 'refs/tags')
-        uses: pypa/gh-action-pypi-publish@release/v1
+        run: echo '[F16 PoC] PyPI publish DISABLED for safety'
         with:
           packages-dir: target/wheels/
           skip-existing: true
